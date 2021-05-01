@@ -14,8 +14,8 @@ public class Sensor {
         this.tipo = t;
         this.valor = v;
 
-        sensores[posAnadir] = this;
-        posAnadir++;
+        Sensor.sensores[posAnadir] = this;
+        Sensor.posAnadir++;
     }
 
     public String toString() {
@@ -23,37 +23,37 @@ public class Sensor {
     }
 
     public static String toStringSensores() {
-        String Sensores = "";
+        String sensores = "";
         for (int i = 0; i < Sensor.cantidadSensores(); i++) {
-            Sensores = Sensores + sensores[i].toString() + ". ";
+            sensores = sensores + Sensor.sensores[i].toString() + ". ";
         }
-        return Sensores;
+        return sensores;
     }
 
     public static int cantidadSensores() {
-        return posAnadir;
+        return Sensor.posAnadir;
     }
 
     public static ArrayList<Sensor> TemperaturaOrden() {
-        ArrayList<Sensor> TempOrden = new ArrayList<Sensor>();
+        ArrayList<Sensor> tempOrden = new ArrayList<Sensor>();
 
         for (int i = 0; i < Sensor.cantidadSensores(); i++) {
             if (Sensor.sensores[i].getTipo().equals("temperatura")) {
-                TempOrden.add(sensores[i]);
+                tempOrden.add(sensores[i]);
             }
         }
-        for (int i = 0; i < TempOrden.size() - 1; i++) {
+        for (int i = 0; i < tempOrden.size() - 1; i++) {
             int pos_menor = i;
-            for (int j = i + 1; j < TempOrden.size(); j++) {
-                if (TempOrden.get(j).getValor() < TempOrden.get(pos_menor).getValor()) {
+            for (int j = i + 1; j < tempOrden.size(); j++) {
+                if (tempOrden.get(j).getValor() < tempOrden.get(pos_menor).getValor()) {
                     pos_menor = j;
                 }
             }
-            Sensor temp = TempOrden.get(i);
-            TempOrden.set(i, TempOrden.get(pos_menor));
-            TempOrden.set(pos_menor, temp);
+            Sensor temp = tempOrden.get(i);
+            tempOrden.set(i, tempOrden.get(pos_menor));
+            tempOrden.set(pos_menor, temp);
         }
-        return TempOrden;
+        return tempOrden;
     }
 
     public String getTipo() {
@@ -72,19 +72,19 @@ public class Sensor {
         this.valor = v;
     }
 
-    public int getTamano() {
-        return tamano;
+    public static int getTamano() {
+        return Sensor.tamano;
     }
 
-    public int getposAnadir() {
-        return posAnadir;
+    public static int getposAnadir() {
+        return Sensor.posAnadir;
     }
 
-    public void setTamano(int t) {
+    public static void setTamano(int t) {
         Sensor.tamano = t;
     }
 
-    public void setAnadir(int a) {
+    public static void setAnadir(int a) {
         Sensor.posAnadir = a;
     }
 }

@@ -21,8 +21,8 @@ public class Vehiculo {
         this.valorComercial = va;
         this.color = co;
 
-        vehiculos [posAnadir] = this;
-        posAnadir++;
+        Vehiculo.vehiculos[posAnadir] = this;
+        Vehiculo.posAnadir++;
     }
 
     public String toString() {
@@ -32,15 +32,15 @@ public class Vehiculo {
     }
 
     public static String toStringVehiculos() {
-        String Vehiculos ="";
+        String vehiculos ="";
         for (int i = 0; i < Vehiculo.cantidadVehiculos(); i++) {
-            Vehiculos = Vehiculos + vehiculos[i].toString() + ". ";
+            vehiculos = vehiculos + Vehiculo.vehiculos[i].toString() + ". ";
         }
-        return Vehiculos;
+        return vehiculos;
     }
 
     public static int cantidadVehiculos() {
-        return posAnadir;
+        return Vehiculo.posAnadir;
     }
 
     public int getModelo() {

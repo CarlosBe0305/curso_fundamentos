@@ -1,0 +1,3 @@
+Tratar de que no todo quede pegado
+Estructura con Vehiculo.vehiculos[] (y similares)
+Estructura: todo empieza por minúscula
