@@ -1,0 +1,5 @@
+4421, Mazda, 10000, blanco
+3121, Audi, 30000, verde
+3135, Ford, 2000000, amarillo
+4128, Renault, 50000, verde
+0993, Chevrolet, 30020, negro
